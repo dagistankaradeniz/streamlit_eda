@@ -6,5 +6,5 @@ st.write("""
 Hello *world!*
 """)
      
-df = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/data/master/NBA_2020.csv')
-st.line_chart(df)
+df = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/data/master/stock_price.csv')
+st.line_chart(df["Close"])
