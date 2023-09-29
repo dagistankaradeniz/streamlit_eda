@@ -6,5 +6,5 @@
     Hello *world!*
     """)
      
-    df = pd.read_csv("my_data.csv")
+    df = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/data/master/NBA_2020.csv')
     st.line_chart(df)
