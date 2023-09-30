@@ -22,7 +22,23 @@ profile = ProfileReport(df,
                             }
                         }
                         )
+st.set_page_config(
+   page_title="dk - Iris Dataset Pandas Profiling",
+   layout="wide",
+   initial_sidebar_state="expanded",
+)
+st.markdown("# Pandas Profiling in Streamlit!")
+st.dataframe(df)
+st.markdown("### `Python` Code to generate below report from above dataset...")
+st.code("""
+        import pandas as pd
+        import streamlit as st
+        from streamlit_pandas_profiling import st_profile_report
+        from ydata_profiling import ProfileReport
+        
+        df = pd.read_csv("https://raw.githubusercontent.com/dataprofessor/data/master/iris.csv")
 
-st.title("Pandas Profiling in Streamlit!")
-st.write(df)
+        st.dataframe(df)
+        st_profile_report(profile)
+        """)
 st_profile_report(profile)
